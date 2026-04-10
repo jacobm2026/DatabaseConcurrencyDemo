@@ -6,6 +6,8 @@
 
 namespace basic_db {
 
+// ------------ Database Query + Responses ------------
+
 // Instruction parameters for the query (should be an enum class)
 constexpr int GET = 0;
 constexpr int ADD = 1;
@@ -31,6 +33,9 @@ struct Response {
 // This would break the implementations if this is violated
 static_assert(sizeof(Query) == sizeof(Response));
 
+
+// ------------ Database Host ------------
+
 class Host {
 
 
@@ -45,6 +50,8 @@ private:
   std::unordered_set<int> database_;
 };
 
+
+// ------------ Database Client ------------
 
 class Client {
 public:
@@ -61,6 +68,8 @@ public:
 private:
   int fd_;
 };
+
+// ------------ Database stdout operations ------------
 std::string instruction_to_string(int instruction);
 std::string status_to_string(int status);
 void print_response(Response r);
