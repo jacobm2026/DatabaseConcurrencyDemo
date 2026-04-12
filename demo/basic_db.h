@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <mutex>
 #include <unordered_set>
 
 
@@ -48,6 +49,7 @@ public:
 private:
   int port_;
   std::unordered_set<int> database_;
+  std::mutex database_mutex_;
 };
 
 

@@ -16,4 +16,4 @@ demo: $(DEMO_EXE)
 
 
 clean:
-	rm $(DEMO_EXE)
+	rm $(DEMO_EXE) server
