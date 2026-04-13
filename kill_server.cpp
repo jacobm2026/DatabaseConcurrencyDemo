@@ -24,7 +24,7 @@ int main() {
     }
 
     // Output the command as if it was run in the terminal
-    std::cout << "kill " << pid << " -" << SIGKILL << '\n';
+    std::cout << "kill -" << SIGKILL << ' ' << pid << '\n';
 
     if (kill(pid, SIGKILL) != 0) {
         perror("kill");
