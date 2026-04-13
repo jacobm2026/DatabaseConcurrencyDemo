@@ -1,9 +1,12 @@
 .PHONY: all demo
 
-all: demo server
+all: demo server kill_server
 
 server: my_server.cpp database_impl/server.cpp
 	g++ -o $@ $^ -lpthread
+
+kill_server: kill_server.cpp
+	g++ -o $@ $^
 
 
 DEMOS := $(wildcard demo/*.cpp)
@@ -16,4 +19,4 @@ demo: $(DEMO_EXE)
 
 
 clean:
-	rm $(DEMO_EXE) server
+	rm $(DEMO_EXE) server kill_server
